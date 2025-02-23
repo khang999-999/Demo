@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKhang iOS - Menu</title>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?stars,galaxy') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 10%;
+        }
+        .button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            border-radius: 10px;
+        }
+        .button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .login-container {
+            margin-top: 20%;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h2>Nhập Key Để Đăng Nhập</h2>
+        <input type="password" id="keyInput" placeholder="Nhập key...">
+        <button class="button" onclick="checkKey()">Đăng Nhập</button>
+    </div>
+    
+    <div class="container hidden" id="menu-container">
+        <h1>PKhang iOS - Menu Chức Năng</h1>
+        <button class="button" onclick="activateFeature('dpi')">Tăng DPI</button>
+        <button class="button" onclick="activateFeature('fps')">Buff FPS</button>
+        <button class="button" onclick="activateFeature('touch')">Touch Optimization</button>
+        <button class="button" onclick="activateFeature('antilag')">Anti Lag</button>
+        <button class="button" onclick="activateFeature('fixrung')">Fix Rung Tâm</button>
+        <p id="status"></p>
+    </div>
+    
+    <script>
+        const validKey = "123456"; // Key test
+        function checkKey() {
+            let key = document.getElementById("keyInput").value;
+            if (key === validKey) {
+                document.getElementById("login-container").classList.add("hidden");
+                document.getElementById("menu-container").classList.remove("hidden");
+            } else {
+                alert("Key không hợp lệ!");
+            }
+        }
+        function activateFeature(feature) {
+            let status = document.getElementById("status");
+            status.innerHTML = feature.toUpperCase() + " Đã Kích Hoạt!";
+        }
+    </script>
+</body>
+</html>
