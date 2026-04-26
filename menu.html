@@ -1,3 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pkhang Ios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .panel {
+            background: #222; /* Dark gray panel */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3); /* Red shadow */
+            width: 300px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        h2 {
+            text-align: center;
+            margin: 0 0 15px 0;
+            color: #f00; /* Red text */
+        }
+        button, select, input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #f00; /* Red border */
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #444; /* Darker input fields */
+            color: #fff; /* White text for inputs */
+        }
+        button:hover {
+            background-color: #f00; /* Red background on hover */
+            color: #fff; /* White text on hover */
+        }
+        .function-group {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333; /* Darker background for function group */
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 5px;
+        }
+        .function-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .function-option input[type="range"] {
+            margin-left: 10px;
+            width: 50%;
+        }
+        .toggle-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100px;
+        }
+        .toggle-button button {
+            padding: 5px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .toggle-button button.on {
+            background-color: #4caf50; /* Green for On */
+            color: white;
+        }
+        .toggle-button button.off {
+            background-color: #f44336; /* Red for Off */
+            color: white;
+        }
+        .toggle-button button.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="panel" id="draggablePanel">
+        <h2>AIMLOCK APP IOS</h2>
+        <button type="button" id="startButton">Bắt Đầu</button>
+        
+        <div id="menuGroup" style="display: none;">
+            <form id="myForm">
+                <select id="appSelect">
+                    <option value="com.dts.freefireth">Free Fire TH</option>
+                    <option value="com.dts.freefiremax">Free Fire MAX</option>
+                </select>
+
+                <select id="iosVersionSelect">
+                    <option value="all">Tất cả phiên bản</option>
+                    <option value="16.7.10">iOS 16.7.10</option>
+        <option value="16.8">iOS 16.8</option>
+        <option value="16.8.1">iOS 16.8.1</option>
+        <option value="16.9">iOS 16.9</option>
+        <option value="16.9.1">iOS 16.9.1</option>
+        <option value="16.10">iOS 16.10</option>
+        <option value="17.0">iOS 17.0</option>
+        <option value="17.1">iOS 17.1</option>
+        <option value="17.2">iOS 17.2</option>
+        <option value="17.3">iOS 17.3</option>
+        <option value="17.4">iOS 17.4</option>
+         <option value="17.4.1">iOS 17.4.1</option>
+          <option value="17.5">iOS 17.5.1</option>
+           <option value="17.6">iOS 17.6.1</option>
+        <option value="18.0">iOS 18.0</option>
+        <option value="18.0.1">iOS 18.0.1</option>
+        <option value="18.1">iOS 18.1</option>
+           <option value="18.1.1">iOS 18.1.1</option>
+        <option value="18.2">iOS 18.2</option>
+         <option value="18.2.1">iOS 18.2.1</option>
+        <option value="18.3">iOS 18.3</option>
+        <option value="18.3.1">iOS 18.3.1</option>
+          <option value="18.4">iOS 18.4</option>
+              <option value="18.4.1">iOS 18.4.1</option>
+            <option value="18.5">iOS 18.5</option>
+              <option value="18.5.1">iOS 18.5.1</option>
+                <option value="26.0">iOS 26.0</option>
+                 <option value="26.0.1">iOS 26.0.1</option>
+                  <option value="26.1">iOS 26.1</option>
+                   <option value="26.1.1">iOS 26.1.1</option>
+                    <option value="26.2">iOS 26.2</option>
+                     <option value="26.2.1">iOS 26.2.1</option>
+                      <option value="26.3">iOS 26.3</option>
+                       <option value="26.3.1">iOS 26.3.1</option>
+                        <option value="26.4">iOS 26.4</option>
+                         <option value="26.4.1">iOS 26.4.1</option>
+                          <option value="26.0.2">iOS 26.0.2</option>
+                </select>
+
+                <select id="deviceSelect">
+                    <option value="all">Tất cả thiết bị</option>
+                    <option value="iphone-6-plus">iPhone 6 Plus</option>
+        <option value="iphone-7">iPhone 7</option>
+        <option value="iphone-8">iPhone 8</option>
+        <option value="iphone-x">iPhone X</option>
+        <option value="iphone-xs">iPhone XS</option>
+        <option value="iphone-xs-max">iPhone XS Max</option>
+        <option value="iphone-11">iPhone 11</option>
+        <option value="iphone-11-pro">iPhone 11 Pro</option>
+        <option value="iphone-11-pro-max">iPhone 11 Pro Max</option>
+        <option value="iphone-12">iPhone 12</option>
+        <option value="iphone-12-mini">iPhone 12 Mini</option>
+        <option value="iphone-12-pro">iPhone 12 Pro</option>
+        <option value="iphone-12-pro-max">iPhone 12 Pro Max</option>
+        <option value="iphone-13">iPhone 13</option>
+        <option value="iphone-13-mini">iPhone 13 Mini</option>
+        <option value="iphone-13-pro">iPhone 13 Pro</option>
+        <option value="iphone-13-pro-max">iPhone 13 Pro Max</option>
+        <option value="iphone-14">iPhone 14</option>
+        <option value="iphone-14-plus">iPhone 14 Plus</option>
+        <option value="iphone-14-pro">iPhone 14 Pro</option>
+        <option value="iphone-14-pro-max">iPhone 14 Pro Max</option>
+        <option value="iphone-15">iPhone 15</option>
+        <option value="iphone-15-plus">iPhone 15 Plus</option>
+        <option value="iphone-15-pro">iPhone 15 Pro</option>
+        <option value="iphone-15-pro-max">iPhone 15 Pro Max</option>
+        <option value="iphone-16">iPhone 16</option>
+        <option value="iphone-16-pro">iPhone 16 Pro</option>
+         <option value="iphone-16-pro">iPhone 16 Pro Max</option>
+        <option value="iphone-16-pro-max">iPhone 17</option>
+        <option value="iphone-16-pro-max">iPhone 17 Pro</option>
+        <option value="iphone-16-pro-max">iPhone 17 Pro Max</option>
+                </select>
+
+               <h3>⚙️ Chức năng</h3>
+
+<button type="button" onclick="toggleFeature(this, 'aimlock')">Aimlock: OFF</button>
+<button type="button" onclick="toggleFeature(this, 'fixlag')">Fix Lag: OFF</button>
+<button type="button" onclick="toggleFeature(this, 'buffman')">Buff Màn: OFF</button>
+<button type="button" onclick="toggleFeature(this, 'ghimtam')">Ghìm Tâm: OFF</button>
+<button type="button" onclick="toggleFeature(this, 'nhetam')">Nhẹ Tâm: OFF</button>
+
+
+
+                <input type="file" id="fileInput" placeholder="Chọn Tệp">
+                <textarea id="configCode" placeholder="Dán mã cấu hình tại đây..."></textarea>
+
+                <button type="button" id="saveButton">Lưu Cài Đặt</button>
+                <button type="button" id="resetButton">Reset về Mặc Định</button>
+                <button type="button" id="startInGameButton">Bắt Đầu vào Game</button>
+                <div id="logBox" style="margin-top:10px; background:#111; padding:10px; height:120px; overflow:auto; font-size:12px; border:1px solid red;">
+</div>
+
+              <div id="loadingBox" style="display:none; margin-top:10px;">
+  <div style="width:100%; background:#111; border:1px solid red;">
+    <div id="loadingBar" style="width:0%; height:20px; background:red; text-align:center; font-size:12px;">0%</div>
+  </div>
+  <p id="loadingText" style="font-size:12px; margin-top:5px;">Đang khởi động...</p>
+</div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Kiểm tra key khi nhấn nút bắt đầu
+        document.getElementById('startButton').addEventListener('click', function() {
+            const keyInput = prompt("Nhập Key để vào menu:");
+            if (keyInput === 'Pkhang') {
+                document.getElementById('menuGroup').style.display = 'block';
+                this.style.display = 'none'; // Ẩn nút bắt đầu
+            } else {
+                alert("Key không hợp lệ!");
+            }
+        });
+
+
+    
+
+
+       
+    
+// Hàm thiết lập Fix Lag
+function setupFixLag(intensity) {
+    // Logic để kích hoạt fix lag
+    console.log(`Kích hoạt Fix Lag với cường độ: ${intensity}`);
+
+    // Giả sử bạn thực hiện các cài đặt tối ưu hóa như tắt hiệu ứng, giảm độ phân giải, v.v.
+    if (intensity > 0) {
+        // Giả lập giảm độ phân giải
+        reduceResolution(intensity);
+        // Tắt các hiệu ứng không cần thiết
+        disableUnnecessaryEffects(intensity);
+    }
+}
+
+// Hàm giả lập giảm độ phân giải
+function reduceResolution(intensity) {
+    // Logic thực tế để điều chỉnh độ phân giải
+    console.log(`Giảm độ phân giải với cường độ: ${intensity}`);
+    // Đây chỉ là một mô phỏng, thực tế cần tích hợp với game
+}
+
+// Hàm giả lập tắt hiệu ứng không cần thiết
+function disableUnnecessaryEffects(intensity) {
+    // Logic để tắt các hiệu ứng không cần thiết
+    console.log(`Tắt các hiệu ứng không cần thiết với cường độ: ${intensity}`);
+}
+                
+
+// Hàm giả lập di chuyển con trỏ
+function moveCursor(x, y) {
+    // Logic thực tế để di chuyển con trỏ hoặc ngắm bắn
+    console.log(`Di chuyển con trỏ đến: (${x}, ${y})`);
+}
+                    
+
+// Hàm thiết lập Buff Màn
+function setupBuffMan(intensity) {
+    // Logic để kích hoạt buff màn
+    console.log(`Kích hoạt Buff Màn với cường độ: ${intensity}`);
+
+    // Giả sử bạn thực hiện các cài đặt như tăng độ sáng, cải thiện độ tương phản, v.v.
+    if (intensity > 0) {
+        increaseBrightness(intensity);
+        enhanceContrast(intensity);
+    }
+}
+
+// Hàm giả lập tăng độ sáng
+function increaseBrightness(intensity) {
+    // Logic thực tế để điều chỉnh độ sáng
+    console.log(`Tăng độ sáng với cường độ: ${intensity}`);
+    // Đây chỉ là một mô phỏng, thực tế cần tích hợp với game
+}
+
+// Hàm giả lập cải thiện độ tương phản
+function enhanceContrast(intensity) {
+    // Logic để cải thiện độ tương phản
+    console.log(`Cải thiện độ tương phản với cường độ: ${intensity}`);
+}
+                    
+
+// Hàm thiết lập Nhẹ Tâm
+function setupNheTam(intensity) {
+    // Logic để kích hoạt nhẹ tâm
+    console.log(`Kích hoạt Nhẹ Tâm với cường độ: ${intensity}`);
+
+    // Giả sử bạn thực hiện các cài đặt như giảm độ giật, cải thiện độ chính xác, v.v.
+    if (intensity > 0) {
+        reduceRecoil(intensity);
+        increaseAccuracy(intensity);
+    }
+}
+
+// Hàm giả lập giảm độ giật
+function reduceRecoil(intensity) {
+    // Logic thực tế để giảm độ giật
+    console.log(`Giảm độ giật với cường độ: ${intensity}`);
+    // Đây chỉ là một mô phỏng, thực tế cần tích hợp với game
+}
+
+const AimEngine = {
+    smooth: 0.18,        // độ mượt (thấp = nhanh, cao = mượt)
+    maxStep: 25,         // giới hạn kéo mỗi frame
+    prediction: 0.35,    // dự đoán chuyển động
+    antiShake: 0.12      // giảm rung
+};
+
+// vector helper
+function vec(x, y) {
+    return { x, y };
+}
+
+function length(v) {
+    return Math.sqrt(v.x * v.x + v.y * v.y);
+}
+
+function normalize(v) {
+    let len = length(v);
+    if (len === 0) return vec(0, 0);
+    return vec(v.x / len, v.y / len);
+}
+
+function clamp(v, maxLen) {
+    let len = length(v);
+    if (len > maxLen) {
+        let n = normalize(v);
+        return vec(n.x * maxLen, n.y * maxLen);
+    }
+    return v;
+}
+
+// 🎯 core aim nâng cấp
+function increaseAccuracy(target, current, velocity = vec(0, 0)) {
+
+    // 1. prediction (dự đoán vị trí)
+    let predictedTarget = vec(
+        target.x + velocity.x * AimEngine.prediction,
+        target.y + velocity.y * AimEngine.prediction
+    );
+
+    // 2. delta (khoảng cách)
+    let delta = vec(
+        predictedTarget.x - current.x,
+        predictedTarget.y - current.y
+    );
+
+    // 3. clamp (giới hạn lực kéo)
+    delta = clamp(delta, AimEngine.maxStep);
+
+    // 4. smoothing (làm mượt)
+    let smoothDelta = vec(
+        delta.x * AimEngine.smooth,
+        delta.y * AimEngine.smooth
+    );
+
+    // 5. anti-shake (lọc rung nhỏ)
+    if (Math.abs(smoothDelta.x) < AimEngine.antiShake) smoothDelta.x = 0;
+    if (Math.abs(smoothDelta.y) < AimEngine.antiShake) smoothDelta.y = 0;
+
+    // 6. output vị trí mới
+    return vec(
+        current.x + smoothDelta.x,
+        current.y + smoothDelta.y
+    );
+}
+
+
+        function setupAimLock(sensitivity, target, current) {
+    // scale theo sensitivity
+    let smooth = 0.25 - sensitivity * 0.12;   // càng cao càng bắt nhanh
+    let lockStrength = 0.6 + sensitivity * 0.4;
+    let antiShake = 0.03 + sensitivity * 0.05;
+    let maxStep = 18 + sensitivity * 12;
+
+    // delta
+    let dx = target.x - current.x;
+    let dy = target.y - current.y;
+
+    // khoảng cách
+    let dist = Math.sqrt(dx * dx + dy * dy);
+
+    // clamp (tránh kéo quá lố)
+    if (dist > maxStep) {
+        dx = (dx / dist) * maxStep;
+        dy = (dy / dist) * maxStep;
+    }
+
+    // apply lock strength (bám mục tiêu mạnh hơn khi gần)
+    let factor = Math.min(1, lockStrength / (dist + 0.001));
+    dx *= factor;
+    dy *= factor;
+
+    // smoothing (mượt)
+    dx *= smooth;
+    dy *= smooth;
+
+    // anti-shake (lọc rung nhỏ)
+    if (Math.abs(dx) < antiShake) dx = 0;
+    if (Math.abs(dy) < antiShake) dy = 0;
+
+    // output
+    return {
+        x: current.x + dx,
+        y: current.y + dy
+    };
+}
+document.getElementById('startInGameButton').addEventListener('click', function () {
+
+    startLoading();
+    fakeInject();
+
+    if (features.aimlock) {
+        let result = setupAimLock(0.7, {x:500,y:300}, {x:0,y:0});
+        addLog("AimLock Active 🎯");
+    }
+
+    if (features.fixlag) {
+        setupFixLag(0.8);
+        addLog("Fix Lag Active ⚡");
+    }
+
+    if (features.buffman) {
+        setupBuffMan(0.6);
+        addLog("Buff Màn Active 💡");
+    }
+
+    if (features.nhetam) {
+        setupNheTam(0.5);
+        addLog("Nhẹ Tâm Active 🎯");
+    }
+
+    addLog("Config applied 🔥");
+});
+    console.log("Config applied 🔥");
+        // Gán sự kiện cho nút Thêm Key
+        document.getElementById('addKeyButton').addEventListener('click', function() {
+            const key = document.getElementById('keyInput').value;
+            if (key) {
+                const li = document.createElement('li');
+                li.textContent = key;
+                document.getElementById('keysList').appendChild(li);
+                document.getElementById('keyInput').value = ''; // Xóa trường nhập key
+            } else {
+                alert("Vui lòng nhập key trước khi thêm!");
+            }
+        });
+    </script>
+</body>
+</html>
+<script>
+
+    // 👇 DÁN Ở ĐÂY
+    function startLoading() {
+        let bar = document.getElementById("loadingBar");
+        let text = document.getElementById("loadingText");
+        let box = document.getElementById("loadingBox");
+
+        box.style.display = "block";
+
+        let progress = 0;
+
+        let steps = [
+            "Đang kết nối server...",
+            "Đang load config...",
+            "Injecting data...",
+            "Tối ưu hệ thống...",
+            "Gần xong rồi..."
+        ];
+
+        let interval = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                text.innerHTML = "Hoàn tất ✅";
+            } else {
+                progress += Math.random() * 10;
+                if (progress > 100) progress = 100;
+
+                bar.style.width = progress + "%";
+                bar.innerHTML = Math.floor(progress) + "%";
+
+                if (progress < 20) text.innerHTML = steps[0];
+                else if (progress < 40) text.innerHTML = steps[1];
+                else if (progress < 60) text.innerHTML = steps[2];
+                else if (progress < 80) text.innerHTML = steps[3];
+                else text.innerHTML = steps[4];
+            }
+        }, 200);
+    }
+</script>
+
 <script>
 const features = {
     aimlock: false,
